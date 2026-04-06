@@ -1,0 +1,21 @@
+<h2>Your History</h2>
+
+<table border="1">
+<tr>
+<th>Exercise</th>
+<th>Repetitions</th>
+<th>Score</th>
+<th>Date</th>
+</tr>
+
+{% for r in records %}
+<tr>
+<td>{{ r[0] }}</td>
+<td>{{ r[1] }}</td>
+<td>{{ r[2] }}</td>
+<td>{{ r[3] }}</td>
+</tr>
+{% endfor %}
+</table>
+
+<a href="/dashboard">Back</a>
