@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leaderboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="dashboard-body">
+
+<div class="dashboard-container">
+
+    <h1>🏆 Top Athletes</h1>
+
+    <div class="leaderboard">
+
+        {% for user in data %}
+        <div class="leader-card">
+
+            <div class="rank">#{{ loop.index }}</div>
+
+            <div class="info">
+                <h3>{{ user['username'] }}</h3>
+                <p>Avg Score: {{ "%.2f"|format(user['avg_score']) }}</p>
+            </div>
+
+        </div>
+        {% endfor %}
+
+    </div>
+
+    <a href="/dashboard" class="back-btn">⬅ Back</a>
+
+</div>
+
+</body>
+</html>

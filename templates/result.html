@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="result-body">
+
+<div class="result-container">
+
+    <h2>🏆 Performance Result</h2>
+
+    <div class="result-card">
+
+        <div class="result-item">
+            <h3>Repetitions</h3>
+            <p>{{ reps }}</p>
+        </div>
+
+        <div class="result-item">
+            <h3>Score</h3>
+            <p class="score">{{ score }}/100</p>
+        </div>
+
+        <div class="result-item">
+            <h3>Feedback</h3>
+            <p class="feedback">{{ feedback }}</p>
+        </div>
+
+    </div>
+    <p class="feedback 
+    {% if score >= 80 %} good 
+    {% elif score >= 50 %} average 
+    {% else %} bad {% endif %}">
+    {{ feedback }}
+</p><p class="feedback 
+    {% if score >= 80 %} good 
+    {% elif score >= 50 %} average 
+    {% else %} bad {% endif %}">
+    {{ feedback }}
+</p>
+
+    <a href="/dashboard" class="back-btn">⬅ Back to Dashboard</a>
+    <a href="/download_report" class="back-btn">📄 Download Report</a>
+
+</div>
+
+</body>
+</html>

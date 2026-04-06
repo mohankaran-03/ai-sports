@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="dashboard-body">
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h2>AI Sports</h2>
+    <a href="/logout">Logout</a>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="dashboard-container">
+
+    <h1>Welcome Athlete 💪</h1>
+
+    <!-- EXERCISE CARDS -->
+    <div class="exercise-grid">
+
+        <div class="card">
+            <h3>Push-Ups</h3>
+            <p>Upper body strength</p>
+        </div>
+
+        <div class="card">
+            <h3>Squats</h3>
+            <p>Lower body power</p>
+        </div>
+
+        <div class="card">
+            <h3>Sit-Ups</h3>
+            <p>Core strength</p>
+        </div>
+
+        <div class="card">
+            <h3>Plank</h3>
+            <p>Endurance</p>
+        </div>
+
+        <div class="card">
+            <h3>Jump</h3>
+            <p>Explosiveness</p>
+        </div>
+
+        <div class="card">
+            <h3>Running</h3>
+            <p>Stamina</p>
+        </div>
+
+    </div>
+
+    <!-- UPLOAD SECTION -->
+    <div class="upload-box">
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+
+            <select name="exercise">
+                <option value="pushup">Push-Up</option>
+                <option value="squat">Squat</option>
+                <option value="situp">Sit-Up</option>
+                <option value="plank">Plank</option>
+            </select>
+
+            <input type="file" name="video" required>
+
+            <button type="submit">Analyze</button>
+<a href="/progress" class="back-btn">📊 View Progress</a>
+<a href="/leaderboard" class="back-btn">🏆 Leaderboard</a>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

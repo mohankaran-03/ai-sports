@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Progress</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="result-body">
+
+<div class="result-container">
+
+    <h2>📊 Your Progress</h2>
+
+    <canvas id="chart"></canvas>
+
+    <a href="/dashboard" class="back-btn">⬅ Back</a>
+
+</div>
+
+<script>
+    const ctx = document.getElementById('chart');
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: {{ exercises | tojson }},
+            datasets: [{
+                label: 'Score',
+                data: {{ scores | tojson }},
+                borderWidth: 3,
+                tension: 0.3,
+                fill: true
+            }]
+        }
+    });
+</script>
+
+</body>
+</html>
