@@ -2,7 +2,7 @@ import cv2
 import mediapipe as mp
 import numpy as np
 
-mp_pose = mp.solutions.pose
+mp_pose = mp.solutions.pose if hasattr(mp, "solutions") else None
 mp_drawing = mp.solutions.drawing_utils
 
 
